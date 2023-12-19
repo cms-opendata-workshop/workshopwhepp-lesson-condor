@@ -10,10 +10,8 @@ keypoints:
 - "Logging in to the TIFR cluster is easy for workshop participants!"
 ---
 
-For this lesson, many temporary accounts have been created on a TIFR computing cluster.
-
 ## Log in with ssh
-
+For this lesson, many temporary accounts have been created on a TIFR computing cluster.
 The local facilitators will provide you with a **username** and **password** to use for this activity.
 If you are following this lesson apart from the local group at WHEPP, please reach out [on the Mattermost channel](https://mattermost.web.cern.ch/cmsodwswhepp24/channels/pre-exercises-help) to request login credentials. 
 

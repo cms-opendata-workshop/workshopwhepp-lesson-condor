@@ -18,14 +18,14 @@ keypoints:
 
 ![](../assets/img/analysisflow.JPG)
 
+In the [Simplified Run 2 analysis lesson](https://cms-opendata-workshop.github.io/workshopwhepp-lesson-ttbarljetsanalysis/) you learned tools to take POET ROOT files and apply event and/or physics object selections to form an analysis. This is a key element of forming a search or measurement using CMS Open Data. How does it fit into the whole picture?
+
+The image above shows where a user's analysis falls in the grand scheme of CMS. The Open Data provides you with everything in the left column: all of the official CMS processing of the raw data has been done to produce AOD or MiniAOD ROOT files published on the Open Data Portal. The software behind these files is accessible to anyone who wishes to take a deep dive! From your own work, you are likely very familiar with the process described in the right column: documenting and publishing an analysis. What you have learned in this workshop is how to perform some of the steps required for the central, analysis specific, column.
+
 > ## We can't tell you what to do!
 > As you might expect, the workflow of any analysis is, by definition, ``analysis specific"!
 > This episode is intended to give you a flavor of a workflow, it's not exhaustive.
 {: .callout}
-
-In the [Simplified Run 2 analysis lesson](https://cms-opendata-workshop.github.io/workshopwhepp-lesson-ttbarljetsanalysis/) you learned tools to take POET ROOT files and apply event and/or physics object selections to form an analysis. This is a key element of forming a search or measurement using CMS Open Data. How does it fit into the whole picture?
-
-The image above shows where a user's analysis falls in the grand scheme of CMS. The Open Data provides you with everything in the left column: all of the official CMS processing of the raw data has been done to produce AOD or MiniAOD ROOT files published on the Open Data Portal. The software behind these files is accessible to anyone who wishes to take a deep dive! From your own work, you are likely very familiar with the process described in the right column: documenting and publishing an analysis. What you have learned in this workshop is how to perform some of the steps required for the central, analysis specific, column.
 
 ## An analysis workflow
 
@@ -36,10 +36,10 @@ There are as many unique analysis workflows as there are physicists! But here is
 - **Skimming and flattening**: you've seen how the POET software can perform this step in the [Physics Objects lesson](https://cms-opendata-workshop.github.io/workshopwhepp-lesson-physics-objects/). To analyze Open Data from 2011 -- 2015 this will always be the first step! In the future, CMS will also release `NanoAOD` files that are similar in structure to POET files so many users will not need to perform a ``flattening" step.
 
 - **Generate observables**: if POET or NanoAOD files are available, the next (or potentially first) analysis step is to use the physics object data in those ROOT files to generate observables of interest for a certain analysis.
-
   - In the example top quark analysis, [this step](https://cms-opendata-workshop.github.io/workshopwhepp-lesson-ttbarljetsanalysis/04-fullanalysis/index.html) applied the event selection and computed the invariant mass of the hadronic top quark.
   - Most CMS analysts compute **many** observables related to both signal and background event topologies, and might incorporate machine learning methods for additional event selection information and/or interesting observables.
   - This analysis step can be done in C++ or python using software like ROOT and uproot that can interpret the input TTree objects. 
+
 
 - **Analyze!** This is the point at which analysis workflows become very unique based on the user's needs. You might:
   - Determine how to model background processes. If background will be modeled from data, separate selection regions are typically defined and fitted functions or transfer factors are computed to provide an estimate of background in a signal-enriched region.
@@ -48,10 +48,12 @@ There are as many unique analysis workflows as there are physicists! But here is
   - Train a machine learning technique to discriminate signal from background
   - and many other possible tasks!
 
+
 - **Final observables**: at this point you might need to loop back to "Generating observables" and add new variables to your analysis based on what you have learned from initial analysis of your data. Eventually, CMS analysts arrive at a set of final observables:
   - Counting experiment: the simplest observable is the number of events passing a set of selection criteria. Event counts for signal and background processes, along with their uncertainties, can be extracted from histograms or functional forms.
   - Histograms: signal and background distributions for an observable of interest can be stored as histograms so that event counts in multiple bins of a distribution can be used for statistical inference.
   - Functional forms: in some analyses, the shape of the signal and/or background processes for the observable of interest might be described using functional forms.
+
 
 - **Statistical inference**: the final step of most CMS analyses is to determine the rate of predicted signal that is consistent with the data, by fitting **Data = BackgroundPrediction + Rate*SignalPrediction**. The [CMS ``Higgs Combine" software](https://cms-analysis.github.io/HiggsAnalysis-CombinedLimit/) is publically accessible for performing such fits, and the [bonus material for the example analysis](https://cms-opendata-workshop.github.io/workshopwhepp-lesson-ttbarljetsanalysis/05-systematics-stats/index.html#introduction-to-stats-analysis) shares a python-based option for performing statistical analysis
 
