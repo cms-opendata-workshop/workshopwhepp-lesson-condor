@@ -4,7 +4,7 @@ root: .  # Is the only page that doesn't follow the pattern /:path/index.html
 permalink: index.html  # Is the only page that doesn't follow the pattern /:path/index.html
 ---
 
-![](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.sciencephoto.com%2Fmedia%2F800168%2Fview%2Fcern-computer-centre&psig=AOvVaw3xFMOYqns-oMEim7QQ45hD&ust=1703088760379000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOCju7Lym4MDFQAAAAAdAAAAABAM){:width="60%"}
+![](../assets/img/C0323301-CERN_Computer_Centre.jpg){:width="60%"}
 <p style="text-align: center;">Image credit: <a href="https://www.sciencephoto.com/media/800168/view/cern-computer-centre">CERN / Science Photo Library</a></p>
 
 The previous lessons have shown how CMS Open Data MiniAOD files can be processed through tools like the Physics Object Extractor Tool to produce ROOT files with ``flat" structure `TTree` objects containing event and physics object information. You have also seen how such ROOT files can be analyzed using python tools like Coffea. 
