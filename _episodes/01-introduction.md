@@ -17,7 +17,7 @@ If you are following this lesson apart from the local group at WHEPP, please rea
 
 In a terminal on your local computer (**NOT** inside a docker container), use `ssh` to connect to the cluster:
 ~~~
-$ ssh userXX@ui3.indiacms.res.in
+$ ssh userXX@ui3.indiacms.res.in  # replace XX with the number provided to you
 ~~~
 {: .language-bash}
 
@@ -26,6 +26,12 @@ After entering the password, you should see the following on your screen:
 FIXME -- TIFR splash screen
 ~~~
 {: .output}
+
+## Discussion prompts
+
+- How much storage space do these TIFR accounts have?
+- How long will this TIFR account be active?
+- How can I reach out for support?
 
 **Great!** You're now set up for the rest of the lesson on January 10. 
 
