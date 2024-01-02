@@ -23,7 +23,10 @@ $ ssh userXX@ui3.indiacms.res.in  # replace XX with the number provided to you
 
 After entering the password, you should see the following on your screen:
 ~~~
-FIXME -- TIFR splash screen
+bob@localpc:wheep2024$ ssh user1@ui3.indiacms.res.in
+user1@ui3.indiacms.res.in's password: 
+Last login: Wed Jan  3 00:32:46 2024 from 14.139.98.164
+[user1@ui3 ~]$ 
 ~~~
 {: .output}
 
