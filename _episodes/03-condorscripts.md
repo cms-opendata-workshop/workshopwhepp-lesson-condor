@@ -50,7 +50,7 @@ scram p CMSSW_7_6_7
 cd CMSSW_7_6_7/src/
 git clone -b 2015MiniAOD https://github.com/ats2008/PhysObjectExtractorTool.git
 scram b -j 4
-cmsenv
+cmsenv    # Note: perform git access before this command!
 cd $_CONDOR_SCRATCH_DIR
 cmsRun /code/CMSSW_7_6_7/src/PhysObjectExtractorTool/PhysObjectExtractor/python/poet_cfg.py  @@ISDATA inputFiles=@@FNAMES maxEvents=@@MAXEVENTS outputFile=outfile_@@IDX.root tag=@@TAG
 pwd
@@ -107,7 +107,7 @@ The arguments include several directories to which `apptainer` will have access,
 ### Can I do more than run POET?
 
 Of course! In this example we have chosen to simply produce a POET root file from MiniAOD input files.
-You can check out additional code repositories and execute further analysis commands after creating a POET
+You can check out additional code repositories (note: do this before the `cmsenv` command, which affects the git path settings) and execute further analysis commands after creating a POET
 root file.
 
 > ## Do I need apptainer after POET?
