@@ -61,7 +61,7 @@ exit 1
 {: .language-bash}
 
 Inside the Open Data docker container, this script will set up the CMS environment and create a CMSSW_7_6_7 software area, similar to what is done when you open the
-container using `docker` on your own computer **CHECK ME -- IS THIS CORRECT?** The script will then clone the 2015 branch of the POET repository from Github and use
+container using `docker` on your own computer. The script will then clone the 2015 branch of the POET repository from Github and use
 `cmsRun` to run POET with several arguments:
 - the data or simulation flag
 - an input file list
