@@ -1,5 +1,5 @@
 ---
-title: "Logistics of an Open Data analysis"
+title: "Logistics of an Open Data analysis (Jan 10)"
 teaching: 20
 exercises: 0
 questions:
