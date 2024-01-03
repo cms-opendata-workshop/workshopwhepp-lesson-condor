@@ -228,45 +228,6 @@ print("")
 ~~~
 {: .language-python}
 
-## Monitoring condor jobs
-
-HTCondor supports many commands that can provide information on the status of job queues and a user's submitted jobs. Details are availabel in the HTCondor manual for [managing a job](https://htcondor.readthedocs.io/en/latest/users-manual/managing-a-job.html). Three extremely useful commands are shared here.
-
-To see the status of your jobs:
-~~~
-$ condor_q
-~~~
-{: .language-bash}
-
-~~~
--- Schedd: ui3.indiacms.res.in : <144.16.111.98:9618?... @ 01/03/24 10:06:52
-OWNER  BATCH_NAME      SUBMITTED   DONE    RUN    IDLE  TOTAL JOB_IDS
-userXX ID: CLUSTERID  1/3  10:03      _      5      _      5  CLUSTERID.JOBIDs
-
-Total for query: 5 jobs; 0 completed, 0 removed, 0 idle, 5 running, 0 held, 0 suspended 
-Total for userXX: 5 jobs; 0 completed, 0 removed, 0 idle, 5 running, 0 held, 0 suspended 
-Total for all users: 5 jobs; 0 completed, 0 removed, 0 idle, 5 running, 0 held, 0 suspended
-~~~
-{: .output}
-
-This command shows the cluster identification number for each set of jobs, the submission time, how many jobs are running or idle, and the individual id numbers of the jobs. 
-
-To remove a job cluster that you would like to kill:
-~~~
-$ condor_rm CLUSTERID   # use CLUSTERID.JOBID to kill a single job in the cluster
-~~~
-{: .language-bash}
-
-~~~
-All jobs in cluster CLUSTERID have been marked for removal
-~~~
-{: .output}
-
-
-To watch the progress of a job that is ongoing:
-~~~
-$ condor_tail -f CLUSTERID.JOBID
-~~~
 
 {% include links.md %}
 
