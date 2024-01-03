@@ -95,9 +95,7 @@ apptainer exec --writable-tmpfs --bind $_CONDOR_SCRATCH_DIR --bind workdir/:/cod
 ~~~
 {: .language-bash}
 
-The arguments include several directories to which `apptainer` will have access, the dockerhub URL of the container needed for 2015 Open Data analysis, and the analysis script that is to be run inside the container. 
-
-**FIXME: Describe the binding better -- why these 3? what does /:/ indicate in the code directory statement?**
+The arguments include binding (similar to -v or --volume docker argument) several directories to which `apptainer` will have access. These directories include the working directory, output directory and the condor base directory. The other argumnets include dockerhub URL of the container needed for 2015 Open Data analysis, and the analysis script that is to be run inside the container.  
 
 > ## What if my cluster doesn't have Apptainer?
 > Consult with your computing system administrators to see if apptainer can be installed on the cluster.
@@ -240,7 +238,18 @@ $ condor_q
 ~~~
 {: .language-bash}
 
-**FIXME: let's show some output for a set of running POET jobs specifically on this cluster**
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+-- Schedd: ui3.indiacms.res.in : <144.16.111.98:9618?... @ 01/03/24 10:06:52
+OWNER  BATCH_NAME      SUBMITTED   DONE    RUN    IDLE  TOTAL JOB_IDS
+userXX ID: CLUSTERID  1/3  10:03      _      5      _      5  CLUSTERID.JOBIDs
+
+Total for query: 5 jobs; 0 completed, 0 removed, 0 idle, 5 running, 0 held, 0 suspended 
+Total for userXX: 5 jobs; 0 completed, 0 removed, 0 idle, 5 running, 0 held, 0 suspended 
+Total for all users: 5 jobs; 0 completed, 0 removed, 0 idle, 5 running, 0 held, 0 suspended
+
+</code></pre></div></div>
+
 
 This command shows the cluster identification number for each job, its idle (I) / held (H) / running (R) status,
 the current run time, and the command that was run.
@@ -251,14 +260,14 @@ $ condor_rm CLUSTERID
 ~~~
 {: .language-bash}
 
-**FIXME: is that enough for this cluster, or does it need --name QUEUE? let's also add output**
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>All jobs in cluster CLUSTERID have been marked for removal
+</code></pre></div></div>
+
 
 To watch the progress of a job that is ongoing:
 ~~~
-$ condor_tail -f CLUSTERID
+$ condor_tail -f CLUSTERID.JOBID
 ~~~
-
-**FIXME: is that enough for this cluster, or does it need --name QUEUE? let's also add output**
 
 {% include links.md %}
 
