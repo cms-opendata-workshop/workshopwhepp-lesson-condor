@@ -60,7 +60,21 @@ $ python3 scripts/makeCondorJobs.py --recid 16446 --tag DYJetsToLL_v1 -n 2 -j 4 
 
 You will see:
 ~~~
-**FIXME, add output***
+[user1@ui3 condorLite]$ python3 scripts/makeCondorJobs.py  -f filelists/DYJetsToLL_13TeV_MINIAODSIM.fls --tag DYJetsToLL_v1 -n 2 -j 4 -e 5000 --run_template templates/runScript.tpl.sh
+ Number of jobs to be made  4
+ Number of events to process per job   5000
+ Tag for the job  DYJetsToLL_v1
+ Output files will be stored at  /home/user1/condorLite/results/odw_poet/poetV1_DYJetsToLL_v1/
+ File list to process :  filelists/DYJetsToLL_13TeV_MINIAODSIM.fls
+
+Making Jobs in templates/runScript.tpl.sh for files from filelists/DYJetsToLL_13TeV_MINIAODSIM.fls
+
+4 Jobs made !
+         submit file  : /home/user1/condorLite/Condor/odw_poet/poetV1_DYJetsToLL_v1//jobpoetV1_DYJetsToLL_v1.sub
+
+
+Condor Jobs can now be submitted by executing :
+condor_submit /home/user1/condorLite/Condor/odw_poet/poetV1_DYJetsToLL_v1//jobpoetV1_DYJetsToLL_v1.sub
 ~~~
 {: .output}
 
