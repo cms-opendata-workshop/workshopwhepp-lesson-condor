@@ -241,11 +241,11 @@ $ condor_q
 
 <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 -- Schedd: ui3.indiacms.res.in : <144.16.111.98:9618?... @ 01/03/24 10:06:52
-OWNER BATCH_NAME       SUBMITTED   DONE   RUN    IDLE  TOTAL JOB_IDS
-userX ID: CLUSTERID  1/3  10:03      _      5      _      5 1195682.0-4
+OWNER  BATCH_NAME      SUBMITTED   DONE    RUN    IDLE  TOTAL JOB_IDS
+userXX ID: CLUSTERID  1/3  10:03      _      5      _      5  CLUSTERID.JOBIDs
 
 Total for query: 5 jobs; 0 completed, 0 removed, 0 idle, 5 running, 0 held, 0 suspended 
-Total for user1: 5 jobs; 0 completed, 0 removed, 0 idle, 5 running, 0 held, 0 suspended 
+Total for userXX: 5 jobs; 0 completed, 0 removed, 0 idle, 5 running, 0 held, 0 suspended 
 Total for all users: 5 jobs; 0 completed, 0 removed, 0 idle, 5 running, 0 held, 0 suspended
 
 </code></pre></div></div>
