@@ -25,8 +25,14 @@ After entering the password, you should see the following on your screen:
 ~~~
 bob@localpc:wheep2024$ ssh user1@ui3.indiacms.res.in
 user1@ui3.indiacms.res.in's password: 
-Last login: Wed Jan  3 00:32:46 2024 from 14.139.98.164
-[user1@ui3 ~]$ 
+Last login: Wed Jan  3 11:30:53 2024 from 14.139.98.164
+Wed Jan  3 11:38:15 IST 2024
+Welcome to the TIFR-INDIACMS computing cluster.
+Please note that the persistant storage quota at the $HOME area is 5 GB.
+Use $HOME/t3store/ for your storage needs.
+
+For whepp participants, if you need access to the storage and computing resources post-expiration of your account, please contact the organizers of opendata-workshop.
+[user1@ui3 ~]$
 ~~~
 {: .output}
 
