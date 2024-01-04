@@ -125,7 +125,6 @@ executable = $(filename)\n\
 output = $Fp(filename)run.$(Cluster).stdout\n\
 error = $Fp(filename)run.$(Cluster).stderr\n\
 log = $Fp(filename)run.$(Cluster).log\n\
-+JobFlavour = \"longlunch\"\n\
 "
 ~~~
 {: .language-python}
