@@ -225,7 +225,7 @@ The output files from codor jobs can be large in number, and we might want to cl
 $ apptainer shell --bind results/:/results   docker://gitlab-registry.cern.ch/cms-cloud/root-vnc:latest
 ~~~
 {: .language-bash}
-> Here we mount the `result` folder as `/results` folder inside the container. Now we are ready to use hadd availabe in the container.
+> Here we mount the `results` folder as `/results` folder inside the container. Now we are ready to use hadd availabe in the container.
 ~~~
 Apptainer $ hadd /results/DYJetsToLL_v1.root /results/odw_poet/poetV1_DYJetsToLL_v1/*.root
 ~~~
@@ -254,9 +254,9 @@ hadd Target path: DYJetsToLL_v1.root:/myfatjets
 hadd Target path: DYJetsToLL_v1.root:/mymets
 ~~~
 {: .output}
-This commad will produce a root file, DYJetsToLL_v1.root, merging the trees available inside all the files matching `results/odw_poet/poetV1_DYJetsToLL_v1/*.root`
+> This commad will produce a root file, DYJetsToLL_v1.root, merging the trees available inside all the files matching `results/odw_poet/poetV1_DYJetsToLL_v1/*.root`
 
-~~
+~~~
 {: .callout}
 
 > ## My output files are large
