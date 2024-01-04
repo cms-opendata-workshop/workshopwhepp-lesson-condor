@@ -221,39 +221,39 @@ The output files from codor jobs can be large in number, and we might want to cl
 
 > ## What if my cluster doesn’t have ROOT
 > If your cluster does-not have a local instalation of `hadd` (`hadd` is a pakage that comes along with the `root` instalation) , you can use the docker contaner for `root`.To acces the `hadd` from the container, we launch a contaner instance interactively.
-~~~
-$ apptainer shell --bind results/:/results   docker://gitlab-registry.cern.ch/cms-cloud/root-vnc:latest
-~~~
+> ~~~
+> $ apptainer shell --bind results/:/results   docker://gitlab-registry.cern.ch/cms-cloud/root-vnc:latest
+> ~~~
 {: .language-bash}
 > Here we mount the `results` folder as `/results` folder inside the container. Now we are ready to use hadd availabe in the container.
-~~~
-Apptainer $ hadd /results/DYJetsToLL_v1.root /results/odw_poet/poetV1_DYJetsToLL_v1/*.root
-~~~
-{: .language-bash}
-
-~~~~
-$ hadd DYJetsToLL_v1.root results/odw_poet/poetV1_DYJetsToLL_v1/*.root
-~~~
-{: .language-bash}
-~~~
-hadd Target file: DYJetsToLL_v1.root
-hadd compression setting for all output: 1
-hadd Source file 4: results/odw_poet/poetV1_DYJetsToLL_v1/outfile_1_DYJetsToLL_v1_numEvent5000.root
-hadd Source file 5: results/odw_poet/poetV1_DYJetsToLL_v1/outfile_2_DYJetsToLL_v1_numEvent5000.root
-hadd Source file 6: results/odw_poet/poetV1_DYJetsToLL_v1/outfile_3_DYJetsToLL_v1_numEvent5000.root
-hadd Source file 8: results/odw_poet/poetV1_DYJetsToLL_v1/outfile_5_DYJetsToLL_v1_numEvent5000.root
-hadd Target path: DYJetsToLL_v1.root:/
-hadd Target path: DYJetsToLL_v1.root:/myelectrons
-hadd Target path: DYJetsToLL_v1.root:/mymuons
-hadd Target path: DYJetsToLL_v1.root:/mytaus
-hadd Target path: DYJetsToLL_v1.root:/myphotons
-hadd Target path: DYJetsToLL_v1.root:/mypvertex
-hadd Target path: DYJetsToLL_v1.root:/mygenparticle
-hadd Target path: DYJetsToLL_v1.root:/myjets
-hadd Target path: DYJetsToLL_v1.root:/myfatjets
-hadd Target path: DYJetsToLL_v1.root:/mymets
-~~~
-{: .output}
+> ~~~
+> Apptainer $ hadd /results/DYJetsToLL_v1.root /results/odw_poet/poetV1_DYJetsToLL_v1/*.root
+> ~~~
+> {: .language-bash}
+> 
+> ~~~~
+> $ hadd DYJetsToLL_v1.root results/odw_poet/poetV1_DYJetsToLL_v1/*.root
+> ~~~
+> {: .language-bash}
+> ~~~
+> hadd Target file: DYJetsToLL_v1.root
+> hadd compression setting for all output: 1
+> hadd Source file 4: results/odw_poet/poetV1_DYJetsToLL_v1/outfile_1_DYJetsToLL_v1_numEvent5000.root
+> hadd Source file 5: results/odw_poet/poetV1_DYJetsToLL_v1/outfile_2_DYJetsToLL_v1_numEvent5000.root
+> hadd Source file 6: results/odw_poet/poetV1_DYJetsToLL_v1/outfile_3_DYJetsToLL_v1_numEvent5000.root
+> hadd Source file 8: results/odw_poet/poetV1_DYJetsToLL_v1/outfile_5_DYJetsToLL_v1_numEvent5000.root
+> hadd Target path: DYJetsToLL_v1.root:/
+> hadd Target path: DYJetsToLL_v1.root:/myelectrons
+> hadd Target path: DYJetsToLL_v1.root:/mymuons
+> hadd Target path: DYJetsToLL_v1.root:/mytaus
+> hadd Target path: DYJetsToLL_v1.root:/myphotons
+> hadd Target path: DYJetsToLL_v1.root:/mypvertex
+> hadd Target path: DYJetsToLL_v1.root:/mygenparticle
+> hadd Target path: DYJetsToLL_v1.root:/myjets
+> hadd Target path: DYJetsToLL_v1.root:/myfatjets
+> hadd Target path: DYJetsToLL_v1.root:/mymets
+> ~~~
+> {: .output}
 > This commad will produce a root file, DYJetsToLL_v1.root, merging the trees available inside all the files matching `results/odw_poet/poetV1_DYJetsToLL_v1/*.root`
 
 ~~~
