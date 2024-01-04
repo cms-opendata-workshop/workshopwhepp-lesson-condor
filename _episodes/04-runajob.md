@@ -232,7 +232,7 @@ The output files from codor jobs can be large in number, and we might want to cl
 > {: .language-bash}
 > 
 > ~~~~
-> $ hadd DYJetsToLL_v1.root results/odw_poet/poetV1_DYJetsToLL_v1/*.root
+> $ hadd /results/DYJetsToLL_v1.root /results/results/odw_poet/poetV1_DYJetsToLL_v1/*.root
 > ~~~
 > {: .language-bash}
 > ~~~
