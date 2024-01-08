@@ -131,9 +131,8 @@ log = $Fp(filename)run.$(Cluster).log\n\
 
 Condor job control files have lines that configure various job behaviors, such as which executable file to send to the worker node and what names to use for output and error files. Different condor clusters will allow different specific lines for requesting CPU or memory, for directing jobs to different queues within the cluster, for passing command line arguments to the executable, etc.
 
-- The official [HTCondor Manual Quickstart Guide](https://htcondor.readthedocs.io/en/latest/users-manual/quick-start-guide.html) provides a good overview of the condor job submission syntax.
-- **FIXME: The specific options configured on the TIFR cluster are described here (ex: which queues are available, other than ``longlunch"?)**
-
+> The official [HTCondor Manual Quickstart Guide](https://htcondor.readthedocs.io/en/latest/users-manual/quick-start-guide.html) provides a good overview of the condor job submission syntax.
+{: .callout}
 
 ### Arguments to configure
 
