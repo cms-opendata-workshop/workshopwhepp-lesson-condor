@@ -47,17 +47,24 @@ root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-
 
 Submit condor jobs that will each process the first 5000 events from a list of 2 MiniAOD files. Since this is a small-scale test, cap the number of jobs at 4 (this will not process the entire Drell-Yan dataset). You have two options for submitting these jobs. First, you could reference the file list:
 ~~~
-$ python3 scripts/makeCondorJobs.py  -f filelists/DYJetsToLL_13TeV_MINIAODSIM.fls --tag DYJetsToLL_v1 -n 2 -j 4 -e 5000 --run_template templates/runScript.tpl.sh -s
+$ python3 scripts/makeCondorJobs.py  -f filelists/DYJetsToLL_13TeV_MINIAODSIM.fls --tag DYJetsToLL_v1 -n 2 -j 4 -e 5000 --run_template templates/runScript.tpl.sh 
 ~~~
 {: .language-bash}
 
 Alternately, you can reference the recid of this Drell-Yan dataset:
 ~~~
-$ python3 scripts/makeCondorJobs.py --recid 16446 --tag DYJetsToLL_v1 -n 2 -j 4 -e 5000 --run_template templates/runScript.tpl.sh -s
-
+$ python3 scripts/makeCondorJobs.py --recid 16446 --tag DYJetsToLL_v1 -n 2 -j 4 -e 5000 --run_template templates/runScript.tpl.sh 
+~~~
+To test your script please try out executing one of made jobs : ( we recommend that you do this atleast once before submitting the jobs.)
+```
+$ ./Condor/odw_poet/poetV1_DYJetsToLL_v1/Job_1/poetV1_DYJetsToLL_v1_1_run.sh
+```
+{: .language-bash}
+To submit the jobs to the condor cluster you can either use the manual submission by using `condor_submit` command, or add `-s` while calling  the `scripts/makeCondorJobs.py` script, as below
+~~~
+$ python3 scripts/makeCondorJobs.py --recid 16446 --tag DYJetsToLL_v1 -n 2 -j 4 -e 5000 --run_template templates/runScript.tpl.sh  -s
 ~~~
 {: .language-bash}
-
 You will first be asked to confirm that you really want to submit jobs, because we have included the `-s` argument in this command. Type `y` to confirm.
 If you wish to inspect the submission scripts first, leave off `-s` and use the `condor_submit` command printed in the output to submit the jobs later.
 You will see something like the following output when you submit jobs, with slight differences between the filelist `-f` and `--recid` submission options:
